@@ -1,3 +1,4 @@
-mkdir /volume1/docker/pihole
-mkdir /volume1/docker/etc-pihole
+#!/bin/bash
+mkdir /volume1/docker/pihole && \
+mkdir /volume1/docker/etc-pihole && \
 mkdir /volume1/docker/etc-dnsmasq.d
