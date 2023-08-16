@@ -5,5 +5,5 @@ mkdir /volume1/docker/pihole/etc-dnsmasq.d && \
 cd /volume1/docker/pihole && \
 wget https://raw.githubusercontent.com/RPiList/SynVideos/main/Videos/DockerPihole/docker-compose.yml && \
 docker-compose up -d && \
-chmod 776 -R /volume1/docker/pihole
+chmod 777 -R /volume1/docker/pihole
 
