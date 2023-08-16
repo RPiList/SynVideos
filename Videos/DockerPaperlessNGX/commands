@@ -1,0 +1,10 @@
+mkdir /volume1/docker/paperless-ngx && \
+mkdir /volume1/docker/paperless-ngx/redisdata && \
+mkdir /volume1/docker/paperless-ngx/pgdata && \
+mkdir /volume1/docker/paperless-ngx/data && \
+mkdir /volume1/docker/paperless-ngx/media && \
+mkdir /volume1/docker/paperless-ngx/export && \
+mkdir /volume1/docker/paperless-ngx/consume && \
+cd /volume1/docker/paperless-ngx && \
+wget https://raw.githubusercontent.com/RPiList/SynVideos/main/Videos/DockerPaperlessNGX/docker-compose.yml && \
+docker-compose up -d
