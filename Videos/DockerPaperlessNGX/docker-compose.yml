@@ -1,0 +1,52 @@
+version: "3.4"
+services:
+  broker:
+    image: docker.io/library/redis:7
+    restart: unless-stopped
+    volumes:
+      - /volume1/docker/paperless-ngx/redisdata:/data
+
+  db:
+    image: docker.io/library/postgres:13
+    restart: unless-stopped
+    volumes:
+      - /volume1/docker/paperless-ngx/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - 8010:8000
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "-S", "--max-time", "2", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - /volume1/docker/paperless-ngx/data:/usr/src/paperless/data
+      - /volume1/docker/paperless-ngx/media:/usr/src/paperless/media
+      - /volume1/docker/paperless-ngx/export:/usr/src/paperless/export
+      - /volume1/docker/paperless-ngx/consume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_SECRET_KEY: supergeheim
+      PAPERLESS_ADMIN_USER: admin
+      PAPERLESS_ADMIN_PASSWORD: 123456
+      PAPERLESS_OCR_LANGUAGE: deu+eng
+      PAPERLESS_CONSUMER_DELETE_DUPLICATES: true
+      USERMAP_UID: 0
+      USERMAP_GID: 0
+
+volumes:
+  data:
+  media:
+  pgdata:
+  redisdata:
