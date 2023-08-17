@@ -1,0 +1,6 @@
+1.
+
+mkdir /volume1/docker/resilio/config
+mkdir /volume1/docker/resilio/downloads
+mkdir /volume1/docker/resilio/data
+
