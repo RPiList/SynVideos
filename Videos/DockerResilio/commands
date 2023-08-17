@@ -4,3 +4,5 @@ mkdir /volume1/docker/resilio/config
 mkdir /volume1/docker/resilio/downloads
 mkdir /volume1/docker/resilio/data
 
+3.
+chmod 1777 -R /volume1/docker/resilio
