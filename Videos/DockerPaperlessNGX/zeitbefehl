@@ -1,1 +1,1 @@
-find /volume1/paperless/ -type f -mmin -60 -exec rsync -a --no-relative {} /volume1/docker/paperless-ngx/consume/ \; > /dev/null 2>&1
+find /volume1/paperless/ -type f -mmin -65 -exec rsync -a --no-relative {} /volume1/docker/paperless-ngx/consume/ \; > /dev/null 2>&1
