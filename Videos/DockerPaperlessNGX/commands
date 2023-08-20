@@ -11,4 +11,4 @@ mkdir /volume1/docker/paperless-ngx/consume
 docker-compose up -d
 
 3.
-find /volume1/paperless/ -type f -mmin -65 -exec rsync -a --no-relative {} /volume1/docker/paperless-ngx/consume/ \; > /dev/null 2>&1
+find /volume1/incoming/ -type f -mmin -65 -exec rsync -a --no-relative {} /volume1/docker/paperless-ngx/consume/ \; > /dev/null 2>&1
