@@ -2,7 +2,7 @@ mkdir /volume1/docker/immich && \
 mkdir /volume1/docker/immich/upload && \
 mkdir /volume1/docker/immich/model-cache && \
 mkdir /volume1/docker/immich/tsdata && \
-mkdir /volume1/docker/immich/pgdata && \
-cd /volume1/docker/immich && \
-wget https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml docker-compose.yml && \
-wget https://github.com/immich-app/immich/releases/latest/download/example.env example.env
+mkdir /volume1/docker/immich/pgdata
+
+https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+https://github.com/immich-app/immich/releases/latest/download/example.env
