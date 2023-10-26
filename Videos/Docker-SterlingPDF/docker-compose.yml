@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  stirling-pdf:
+    container_name: Stirling-PDF
+    image: frooodle/s-pdf
+    mem_limit: 2g
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+     test: curl -f http://localhost:8080/ || exit 1
+    ports:
+      - 7890:8080
+    volumes:
+      - /volume1/docker/stirling/data:/usr/share/tesseract-ocr/4.00/tessdata:rw # Required for extra OCR languages
+      - /volume1/docker/stirling/config:/configs:rw
+    environment:
+     DOCKER_ENABLE_SECURITY: true # or false
+     SECURITY_ENABLELOGIN: true #or false
+     SECURITY_INITIALLOGIN_USERNAME: "admin"
+     SECURITY_INITIALLOGIN_PASSWORD: "123456"
+     SECURITY_CSRFDISABLED: true #or false
+     SYSTEM_DEFAULTLOCALE: de_DE # or fr_FR or en_US
+     UI_APPNAME: StirlingPDF
+     UI_HOMEDESCRIPTION: Stirling PDF Description
+     UI_APPNAMENAVBAR: Stirling PDF
+     SYSTEM_MAXFILESIZE: 5000 # Set the maximum file size in MB
+     METRICS_ENABLED: true
+     SYSTEM_GOOGLEVISIBILITY: false # or true
+    restart: on-failure:5
