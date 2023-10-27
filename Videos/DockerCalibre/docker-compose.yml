@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  calibre-web:
+    image: ghcr.io/linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Europe/Berlin
+      - DOCKER_MODS=ghcr.io/linuxserver/mods:universal-calibre
+    volumes:
+      - /volume1/docker/calibre/data:/config
+      - /volume1/docker/calibre/library:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
