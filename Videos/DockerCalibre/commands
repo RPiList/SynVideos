@@ -1,0 +1,5 @@
+mkdir /volume1/docker/calibre
+mkdir /volume1/docker/calibre/data
+mkdir /volume1/docker/calibre/library
+cd /volume1/docker/calibre/data
+wget http://sempervideo.de/metadata.db
