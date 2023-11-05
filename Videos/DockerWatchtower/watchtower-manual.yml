@@ -1,0 +1,12 @@
+ version: "3"
+ services:
+   watchtower:
+     container_name: watchtower-manual
+     image: containrrr/watchtower
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+#     restart: unless-stopped
+     environment:
+       - TZ=Europe/Berlin
+       - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
+     command: --cleanup --run-once pihole
