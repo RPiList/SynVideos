@@ -1,0 +1,13 @@
+ version: "3"
+ services:
+   watchtower:
+     container_name: watchtower
+     image: containrrr/watchtower
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     restart: unless-stopped
+     environment:
+       - TZ=Europe/Berlin
+       - WATCHTOWER_LIFECYCLE_HOOKS=1 # Enable pre/post-update scripts
+     command: --cleanup schedule "0 0 4 * * *" calibre-web watchtower jellyfin paperless-ngx-broker-1 paperless-ngx-db-1 paperless-ngx-webserver-1 portainer Stirling-PDF
+     
