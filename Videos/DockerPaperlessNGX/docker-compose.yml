@@ -44,9 +44,3 @@ services:
       PAPERLESS_CONSUMER_DELETE_DUPLICATES: true
       USERMAP_UID: 0
       USERMAP_GID: 0
-
-volumes:
-  data:
-  media:
-  pgdata:
-  redisdata:
