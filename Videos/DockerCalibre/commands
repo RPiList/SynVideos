@@ -2,4 +2,4 @@ mkdir /volume1/docker/calibre
 mkdir /volume1/docker/calibre/data
 mkdir /volume1/docker/calibre/library
 cd /volume1/docker/calibre/data
-wget http://sempervideo.de/metadata.db
+wget https://github.com/RPiList/SynVideos/raw/main/Videos/DockerCalibre/metadata.db
