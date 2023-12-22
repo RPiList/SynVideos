@@ -7,7 +7,7 @@ services:
       - /volume1/docker/paperless-ngx/redisdata:/data
 
   db:
-    image: docker.io/library/postgres:13
+    image: docker.io/library/postgres:15
     restart: unless-stopped
     volumes:
       - /volume1/docker/paperless-ngx/pgdata:/var/lib/postgresql/data
