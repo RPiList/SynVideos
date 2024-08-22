@@ -1,0 +1,4 @@
+mkdir /volume1/docker/ntfy && \
+mkdir /volume1/docker/ntfy/var && \
+mkdir /volume1/docker/ntfy/var/cache && \
+mkdir /volume1/docker/ntfy/etc
