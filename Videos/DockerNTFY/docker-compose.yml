@@ -7,13 +7,12 @@ services:
       - serve
     environment:
       - TZ=Europe/Berlin    # optional: Change to your desired timezone
-    user: 1000:1000 # optional: Set custom user/group or uid/gid
+    #user: 0:0 # optional: Set custom user/group or uid/gid
     volumes:
       - /volume1/docker/ntfy/var/cache:/var/cache/ntfy
       - /volume1/docker/ntfy/etc:/etc/ntfy
     ports:
       - 8777:80
-      - 8778:443
     healthcheck: # optional: remember to adapt the host:port to your environment
         test: ["CMD-SHELL", "wget -q --tries=1 http://localhost:80/v1/health -O - | grep -Eo '\"healthy\"\\s*:\\s*true' || exit 1"]
         interval: 60s
