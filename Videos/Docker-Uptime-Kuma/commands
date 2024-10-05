@@ -1,0 +1,2 @@
+mkdir /volume1/docker/uptime-kuma && \
+mkdir /volume1/docker/uptime-kuma/data
