@@ -1,9 +1,0 @@
-services:
-  uptime-kuma:
-    image: louislam/uptime-kuma:1
-    volumes:
-      - /volume1/docker/uptime-kuma/data:/app/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 4848:3001
-    restart: unless-stopped
