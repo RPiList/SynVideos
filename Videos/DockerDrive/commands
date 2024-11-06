@@ -1,1 +1,5 @@
-/opt/seafile-mysql/db
+mkdir /volume1/docker/seafile && \
+mkdir /volume1/docker/seafile/opt && \
+mkdir /volume1/docker/seafile/opt/seafile-mysql && \
+mkdir /volume1/docker/seafile/opt/seafile-mysql/db && \
+mkdir /volume1/docker/seafile/opt/seafile-data
