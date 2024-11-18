@@ -1,0 +1,6 @@
+force_install_dir /home/sprecher/arma3/
+login <account-name> <password>
+//for servers which don't need a login
+//login anonymous 
+app_update 233780 -beta creatordlc validate
+quit
