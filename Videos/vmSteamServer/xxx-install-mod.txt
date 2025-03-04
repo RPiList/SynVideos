@@ -1,6 +1,0 @@
-force_install_dir /home/sprecher/arma3/
-login User Passwort
-
-workshop_download_item 107410 3407970596 validate
-
-quit
